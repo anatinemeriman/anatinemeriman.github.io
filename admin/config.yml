@@ -1,0 +1,76 @@
+backend:
+  name: github
+  repo: anatinemeriman/anatinemeriman.github.io
+  branch: main
+  base_url: https://runaman-oauth.anatinemeriman.workers.dev
+
+media_folder: "."
+public_folder: "."
+
+locale: pt
+
+collections:
+
+  - name: "universos_pt"
+    label: "Universos (Português)"
+    folder: "content/pt/universos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título do Livro / Projeto", name: "titulo", widget: "string" }
+      - { label: "Categoria", name: "categoria", widget: "string", hint: "Ex: Livro & Animação" }
+      - { label: "Sinopse", name: "sinopse", widget: "text" }
+      - { label: "Capa do Livro (.png)", name: "imagem", widget: "image" }
+
+  - name: "universos_es"
+    label: "Universos (Español)"
+    folder: "content/es/universos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título del Libro / Proyecto", name: "titulo", widget: "string" }
+      - { label: "Categoría", name: "categoria", widget: "string", hint: "Ej: Libro & Animación" }
+      - { label: "Sinopsis", name: "sinopse", widget: "text" }
+      - { label: "Portada (.png)", name: "imagem", widget: "image" }
+
+  - name: "produtos_pt"
+    label: "Produtos Vitrine (Português)"
+    folder: "content/pt/produtos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome do Produto", name: "titulo", widget: "string" }
+      - { label: "Etiqueta", name: "badge", widget: "select", options: ["Protótipo Oficial", "Concept Model", "Réplica Licenciada"] }
+      - { label: "Descrição", name: "descricao", widget: "text" }
+      - { label: "Imagem do Produto (.png)", name: "imagem", widget: "image" }
+
+  - name: "produtos_es"
+    label: "Productos Vitrina (Español)"
+    folder: "content/es/produtos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre del Producto", name: "titulo", widget: "string" }
+      - { label: "Etiqueta", name: "badge", widget: "select", options: ["Prototipo Oficial", "Model Conceptual", "Réplica Licenciada"] }
+      - { label: "Descripción", name: "descricao", widget: "text" }
+      - { label: "Imagen del Producto (.png)", name: "imagem", widget: "image" }
+
+  - name: "incubacao_pt"
+    label: "Incubação / Notas do Autor (Português)"
+    folder: "content/pt/incubacao"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Projeto", name: "projeto", widget: "string", hint: "Ex: Los Papanatas" }
+      - { label: "Nota do Autor", name: "texto", widget: "text" }
+      - { label: "RAF / Rascunho (.png)", name: "raf", widget: "image" }
+
+  - name: "incubacao_es"
+    label: "Incubación / Notas del Autor (Español)"
+    folder: "content/es/incubacao"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Proyecto", name: "projeto", widget: "string", hint: "Ej: Los Papanatas" }
+      - { label: "Nota del Autor", name: "texto", widget: "text" }
+      - { label: "RAF / Boceto (.png)", name: "raf", widget: "image" }
