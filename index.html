@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runaman | Universo Galáctico</title>
+
+    <!-- ✅ URLs corrigidas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ==========================================================================
+           RESET & BASE
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #DFDFDB;
+            color: #1A1D20;
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ==========================================================================
+           DIVISOR
+           ========================================================================== */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background-color: #1A1D20;
+            margin: 80px auto;
+            opacity: 0.2;
+        }
+
+        /* ==========================================================================
+           CABEÇALHOS DE SECÇÃO
+           ========================================================================== */
+        .section-header {
+            text-align: center;
+            margin: 0 auto 60px auto;
+            max-width: 650px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            font-weight: 500;
+            color: #4A70F6;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: #555A60;
+            line-height: 1.6;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: justify;
+            font-weight: 300;
+        }
+
+        /* ==========================================================================
+           NAVBAR
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(223, 223, 219, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(26, 29, 32, 0.05);
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            max-width: 250px;
+            flex-shrink: 0;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+            font-weight: 300;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .nav-shop {
+            font-size: 0.9rem;
+            border: 1px solid rgba(26, 29, 32, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            font-weight: 300;
+        }
+
+        .nav-shop:hover {
+            background-color: #1A1D20;
+            color: #DFDFDB;
+        }
+
+        /* ==========================================================================
+           HERO
+           ========================================================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            position: relative;
+            padding-top: 100px;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            width: 100%;
+            gap: 60px;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-tag {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #8A94A0;
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 300;
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 30px;
+        }
+
+        .hero-title span {
+            font-weight: 500;
+            display: block;
+            color: #4A70F6;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555A60;
+            max-width: 500px;
+            text-align: justify;
+            font-weight: 300;
+        }
+
+        .hero-description p {
+            margin-bottom: 15px;
+        }
+
+        .hero-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cta-button {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            background-color: #1A1D20;
+            color: #DFDFDB;
+            padding: 16px 32px;
+            border-radius: 4px;
+            display: inline-block;
+            transition: all 0.3s;
+            margin-top: 30px;
+            font-weight: 300;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(74, 112, 246, 0.15);
+            background-color: #4A70F6;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .planet-bg {
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 1 / 1;
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(240,242,245,0.4) 100%);
+            border-radius: 50%;
+            border: 1px solid rgba(26, 29, 32, 0.03);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 40px;
+        }
+
+        .character-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            animation: floatReal 6s ease-in-out infinite;
+        }
+
+        @keyframes floatReal {
+            0%   { transform: translateY(0px); }
+            50%  { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* ==========================================================================
+           UNIVERSOS EM EXPANSÃO
+           ========================================================================== */
+        .projects-section {
+            padding: 100px 8%;
+            background-color: transparent;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: transparent;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .project-media {
+            width: 100%;
+            height: 520px;
+            background: transparent;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 25px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project-media img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .project-meta {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #4A70F6;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        .project-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: #555A60;
+            line-height: 1.6;
+            max-width: 450px;
+            text-align: justify;
+            font-weight: 300;
+        }
+
+        /* ==========================================================================
+           O TRAÇO E A FILOSOFIA — INCUBAÇÃO
+           ========================================================================== */
+        .incubation-section {
+            padding: 100px 8%;
+            background-color: transparent;
+        }
+
+        .incubation-content {
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .incubation-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        /* Bloco par: inverte colunas (imagem esquerda, texto direita) */
+        .incubation-block:nth-child(2n) {
+            direction: rtl;
+        }
+
+        .incubation-block:nth-child(2n) .incubation-text {
+            direction: ltr;
+        }
+
+        .incubation-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #1A1D20;
+            max-width: 450px;
+            text-align: justify;
+            font-weight: 300;
+        }
+
+        .incubation-text strong {
+            font-weight: 500;
+            color: #4A70F6;
+        }
+
+        .raf-container {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .raf-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.4s ease;
+        }
+
+        .incubation-block:hover .raf-img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        /* ==========================================================================
+           VITRINE DE LICENCIAMENTO
+           ========================================================================== */
+        .shop-section {
+            padding: 100px 8%;
+            background-color: transparent;
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .product-card {
+            background: transparent;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .product-media {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+        }
+
+        .product-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.03);
+        }
+
+        .product-badge {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #4A70F6;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+
+        .product-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #555A60;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 240px;
+            text-align: justify;
+            font-weight: 300;
+        }
+
+        .product-btn {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 300;
+            color: #1A1D20;
+            border-bottom: 1px solid #1A1D20;
+            padding-bottom: 2px;
+            margin-top: auto;
+            transition: opacity 0.2s;
+        }
+
+        .product-btn:hover {
+            opacity: 0.7;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        .footer {
+            padding: 40px 8%;
+            border-top: 1px solid rgba(26, 29, 32, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            color: #555A60;
+            font-weight: 300;
+        }
+
+        /* ==========================================================================
+           RESPONSIVIDADE
+           ========================================================================== */
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 140px;
+            }
+
+            .projects-grid,
+            .shop-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .project-media {
+                height: 450px;
+            }
+
+            .incubation-block {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .incubation-block:nth-child(2n) {
+                direction: ltr;
+            }
+
+            .incubation-text {
+                margin: 0 auto;
+                text-align: justify;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .divider {
+                margin: 50px auto;
+            }
+
+            .shop-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* ==========================================================================
+           CONTACTO COMERCIAL B2B
+           ========================================================================== */
+        .contact-section {
+            padding: 100px 8%;
+            background-color: transparent;
+        }
+
+        .contact-inner {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .contact-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #4A70F6;
+            font-weight: 300;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .contact-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 300;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 32px;
+            color: #1A1D20;
+        }
+
+        .contact-title span {
+            font-weight: 500;
+            color: #4A70F6;
+        }
+
+        .contact-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.98rem;
+            line-height: 1.75;
+            color: #555A60;
+            font-weight: 300;
+            max-width: 460px;
+            text-align: justify;
+            margin-bottom: 18px;
+        }
+
+        .contact-text:last-of-type {
+            margin-bottom: 36px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            background-color: #1A1D20;
+            color: #DFDFDB;
+            padding: 16px 36px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .contact-btn:hover {
+            background-color: #4A70F6;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(74, 112, 246, 0.15);
+        }
+
+        /* ==========================================================================
+           MODAL — FICHA TÉCNICA (GAVETA GALÁCTICA)
+           ========================================================================== */
+
+        /* Overlay escurecido por trás */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 29, 32, 0.35);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+
+        /* Estado activo — visível */
+        .modal-overlay.is-open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Gaveta central translúcida */
+        .modal {
+            background: rgba(223, 223, 219, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(26, 29, 32, 0.06);
+            width: 100%;
+            max-width: 560px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 50px 48px 48px 48px;
+            position: relative;
+            transform: translateY(18px);
+            transition: transform 0.35s ease;
+        }
+
+        .modal-overlay.is-open .modal {
+            transform: translateY(0);
+        }
+
+        /* Scrollbar discreta */
+        .modal::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .modal::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .modal::-webkit-scrollbar-thumb {
+            background: rgba(26, 29, 32, 0.15);
+            border-radius: 2px;
+        }
+
+        /* Botão fechar */
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #8A94A0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px 0;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #1A1D20;
+        }
+
+        /* Cabeçalho da ficha */
+        .modal-badge {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: #4A70F6;
+            font-weight: 300;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .modal-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 300;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+            margin-bottom: 6px;
+            color: #1A1D20;
+        }
+
+        .modal-subtitle {
+            font-size: 0.85rem;
+            color: #8A94A0;
+            font-weight: 300;
+            margin-bottom: 32px;
+            display: block;
+        }
+
+        /* Linha divisória interna */
+        .modal-divider {
+            width: 40px;
+            height: 1px;
+            background-color: #1A1D20;
+            opacity: 0.15;
+            margin: 28px 0;
+        }
+
+        /* Bloco de campo da ficha */
+        .modal-field {
+            margin-bottom: 22px;
+        }
+
+        .modal-field-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8A94A0;
+            font-weight: 300;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .modal-field-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #1A1D20;
+            font-weight: 300;
+            max-width: 450px;
+            text-align: justify;
+        }
+
+        /* CTA dentro do modal */
+        .modal-cta {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #1A1D20;
+            border-bottom: 1px solid rgba(26, 29, 32, 0.4);
+            padding-bottom: 2px;
+            margin-top: 10px;
+            transition: opacity 0.2s;
+        }
+
+        .modal-cta:hover {
+            opacity: 0.5;
+        }
+
+        /* Responsividade do modal */
+        @media (max-width: 600px) {
+            .modal {
+                padding: 44px 28px 36px 28px;
+                max-height: 90vh;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="#" class="logo-container">
+            <img src="logo.png" alt="Runaman Logo" class="logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#universos">Universos</a></li>
+            <li><a href="#incubacao">Incubação</a></li>
+            <li><a href="#loja">Licenciamento</a></li>
+            <li><a href="#contato">Contacto</a></li>
+        </ul>
+        <a href="es.html" style="font-size: 0.85rem; font-family: 'Space Grotesk', sans-serif; font-weight: 300; margin-right: 20px; opacity: 0.6; text-decoration: none; color: #1A1D20; transition: opacity 0.3s;">ES</a>
+        <a href="#loja" class="nav-shop">Vitrine MKT 💼</a>
+    </nav>
+
+    <!-- =====================================================================
+         HERO
+         ===================================================================== -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-tag">Designer &amp; Autor Multimídia</span>
+                <h1 class="hero-title">
+                    Histórias que orbitam livros,
+                    <span>telas de TV e a imaginação.</span>
+                </h1>
+                <div class="hero-description">
+                    <p><strong>O Traço, a Filosofia e a Expansão Transmídia</strong></p>
+                    <p>Acredito na arte que nasce da pesquisa profunda e da conexão humana real. Durante três décadas, atuei de forma independente no design gráfico, refinando a expressividade e o rigor técnico da animação clássica de padrão global, sempre nutrido por investigações em semiótica, história, física quântica e literatura.</p>
+                    <p>A marca Runaman é o ponto de encontro onde essa bagagem se transforma em propriedades intelectuais com alma e forte apelo de mercado. Nossos universos operam em uma estratégia de progressão deliberada: validam-se primeiro de forma tátil nas páginas da literatura de alta qualidade — do livro infantil de capa dura à Graphic Novel e ao quadrinho clássico — prontos para expandir rumo à escala das telas de televisão e plataformas de streaming.</p>
+                    <p>Mais do que entretenimento, oferecemos ecossistemas de consumo conceitual. Cada narrativa ganha vida em uma grife de merchandising estratégico, onde o design dita o ritmo da experiência: seja no calor das pelúcias orgânicas, no resgate cultural do design andino, na papelaria fina ou no contraste sensorial planejado dos brinquedos rígidos.</p>
+                </div>
+                <a href="#universos" class="cta-button">Explore as Galáxias</a>
+            </div>
+            <div class="hero-visual">
+                <div class="planet-bg">
+                    <img src="personagem.png" alt="Personagem principal" class="character-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="divider"></div>
+
+    <!-- =====================================================================
+         UNIVERSOS EM EXPANSÃO
+         ===================================================================== -->
+    <section id="universos" class="projects-section">
+        <div class="section-header">
+            <h2 class="section-title">Universos em <span>Expansão</span></h2>
+            <p class="section-subtitle">
+                Explore os projetos autorais que ganharam vida nas páginas impressas e cruzaram
+                a órbita para se transformarem em animações e séries de televisão.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- Projeto 1 -->
+            <div class="project-card">
+                <div class="project-media">
+                    <img src="livro-projeto1.png" alt="Los Papanatas — capa">
+                </div>
+                <div class="project-info">
+                    <span class="project-meta">Livro &amp; Animação</span>
+                    <h3 class="project-name">Los Papanatas</h3>
+                    <p class="project-desc">
+                        Uma comédia de animação vibrante sobre uma irreverente família de quatro batatas
+                        guardiãs das sementes nativas. Eles lutam para preservar o sabor orgânico
+                        e a cultura ancestral.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Projeto 2 -->
+            <div class="project-card">
+                <div class="project-media">
+                    <img src="livro-projeto2.png" alt="Macho-Picchu — capa">
+                </div>
+                <div class="project-info">
+                    <span class="project-meta">Graphic Novel</span>
+                    <h3 class="project-name">Macho-Picchu</h3>
+                    <p class="project-desc">
+                        A jornada visual e filosófica de uma Montanha Nômade inorgânica que desperta após
+                        milênios de convívio com os homens, transformando-se em um colosso lítico.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Projeto 3 -->
+            <div class="project-card">
+                <div class="project-media">
+                    <img src="livro-projeto3.png" alt="O Bicho da Semente — capa">
+                </div>
+                <div class="project-info">
+                    <span class="project-meta">Universo Transmídia</span>
+                    <h3 class="project-name">O Bicho da Semente</h3>
+                    <p class="project-desc">
+                        Uma metahistória quântica sobre os Clorofilhos de Jacuba viajando até Tampo-Tock.
+                        O Bicho da Semente surge como a Lembrança afetiva do retorno para casa.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="divider"></div>
+
+    <!-- =====================================================================
+         O TRAÇO E A FILOSOFIA — INCUBAÇÃO
+         ===================================================================== -->
+    <section id="incubacao" class="incubation-section">
+        <div class="section-header">
+            <h2 class="section-title">O Traço e a <span>Filosofia</span></h2>
+            <p class="section-subtitle">
+                A jornada de um universo transmídia começa muito antes do primeiro frame de animação.
+                Ela ganha vida no silêncio do laboratório criativo, onde ideias complexas são traduzidas
+                em traços livres e conceitos visuais táteis.
+            </p>
+        </div>
+
+        <div class="incubation-content">
+
+            <!-- Bloco 1: texto esquerda / RAF direita -->
+            <div class="incubation-block">
+                <p class="incubation-text">
+                    "Acredito na arte que nasce da observação silenciosa do mundo real. Durante 30 anos,
+                    refinei de forma independente o rigor anatômico e a expressividade da animação clássica
+                    de padrão global. Cada traço do ecossistema de <strong>Los Papanatas</strong> foi
+                    desenhado para contrapor a pureza orgânica da terra contra a rigidez do plástico industrial."
+                </p>
+                <div class="raf-container">
+                    <img src="raf-papanatas.png" alt="RAF Los Papanatas" class="raf-img">
+                </div>
+            </div>
+
+            <!-- Bloco 2: RAF esquerda / texto direita (alternado) -->
+            <div class="incubation-block">
+                <p class="incubation-text">
+                    "Os referentes convencionais não dão conta da complexidade humana. Em
+                    <strong>Macho-Picchu</strong>, a pesquisa em história e sociedade deu origem a uma
+                    metamorfose mineral poética. O desafio gráfico foi capturar como uma essência inorgânica
+                    milenar absorve a curiosidade dos homens e se converte em um colosso lítico perdido
+                    no caos urbano."
+                </p>
+                <div class="raf-container">
+                    <img src="raf-machopichu.png" alt="RAF Macho-Picchu" class="raf-img">
+                </div>
+            </div>
+
+            <!-- Bloco 3: texto esquerda / RAF direita -->
+            <div class="incubation-block">
+                <p class="incubation-text">
+                    "A física quântica e a semiótica não são exclusivas dos laboratórios. Em
+                    <strong>O Bicho da Semente</strong>, usei essa bagagem para modelar Jacuba, um reino
+                    de lã de açúcar onde o Tempo colapsa a vida em sementes de histórias. O design do
+                    Bicho foi estruturado não para buscar status comercial, mas para representar o gesto
+                    tátil do aconchego e da lembrança do lar."
+                </p>
+                <div class="raf-container">
+                    <img src="raf-bicho-semente.png" alt="RAF Bicho da Semente" class="raf-img">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="divider"></div>
+
+    <!-- =====================================================================
+         VITRINE DE LICENCIAMENTO
+         ===================================================================== -->
+    <section id="loja" class="shop-section">
+        <div class="section-header">
+            <h2 class="section-title">Vitrine de <span>Licenciamento</span></h2>
+            <p class="section-subtitle">
+                Modelos conceituais e protótipos de alta aderência comercial, desenhados para
+                expandir a experiência narrativa e tangibilizar o valor das marcas.
+            </p>
+        </div>
+
+        <div class="shop-grid">
+
+            <!-- Produto 1 -->
+            <div class="product-card">
+                <div class="product-media">
+                    <img src="produto1.png" alt="Pelúcia Bicho da Semente" class="product-img">
+                </div>
+                <span class="product-badge">Protótipo Oficial</span>
+                <h4 class="product-title">Pelúcia Bicho da Semente</h4>
+                <p class="product-desc">
+                    Protótipo têxtil com textura ultra macia de lã de açúcar, materializando o gesto
+                    tátil de acolhimento e a lembrança do lar.
+                </p>
+                <a href="#" class="product-btn" data-produto="produto1">Ver Ficha de Licenciamento ➔</a>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="product-card">
+                <div class="product-media">
+                    <img src="produto2.png" alt="Pelúcia Orgânica Papanata" class="product-img">
+                </div>
+                <span class="product-badge">Protótipo Oficial</span>
+                <h4 class="product-title">Pelúcia Orgânica Papanata</h4>
+                <p class="product-desc">
+                    Desenvolvido em algodão orgânico certificado e tinturas naturais, contrapondo
+                    a pureza da culinária ancestral ao mercado industrial.
+                </p>
+                <a href="#" class="product-btn" data-produto="produto2">Ver Ficha de Licenciamento ➔</a>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="product-card">
+                <div class="product-media">
+                    <img src="produto3.png" alt="Pelúcias Huacos Inca" class="product-img">
+                </div>
+                <span class="product-badge">Concept Model</span>
+                <h4 class="product-title">Pelúcias Huacos Inca</h4>
+                <p class="product-desc">
+                    A arqueologia andina feita para abraçar. Transforma o design geométrico dos
+                    vasos de cerâmica incas em peças tridimensionais macias.
+                </p>
+                <a href="#" class="product-btn" data-produto="produto3">Ver Ficha de Licenciamento ➔</a>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="product-card">
+                <div class="product-media">
+                    <img src="produto4.png" alt="Brinquedo Rígido Insípido" class="product-img">
+                </div>
+                <span class="product-badge">Concept Model</span>
+                <h4 class="product-title">Brinquedo Rígido Insípido</h4>
+                <p class="product-desc">
+                    Conceito injetado em plástico rígido e fosco, criando um contraste sensorial
+                    e conceitual intencional contra as pelúcias orgânicas.
+                </p>
+                <a href="#" class="product-btn" data-produto="produto4">Ver Ficha de Licenciamento ➔</a>
+            </div>
+
+            <!-- Produto 5 -->
+            <div class="product-card">
+                <div class="product-media">
+                    <img src="produto5.png" alt="Kit Pelúcias Clorofilhos" class="product-img">
+                </div>
+                <span class="product-badge">Protótipo Oficial</span>
+                <h4 class="product-title">Kit Pelúcias Clorofilhos</h4>
+                <p class="product-desc">
+                    Conjunto com três mini pelúcias representando as pequenas e luminosas entidades
+                    quânticas antes do colapso do Tempo.
+                </p>
+                <a href="#" class="product-btn" data-produto="produto5">Ver Ficha de Licenciamento ➔</a>
+            </div>
+
+            <!-- Produto 6 -->
+            <div class="product-card">
+                <div class="product-media">
+                    <img src="produto6.png" alt="O Tamborim do Tempo" class="product-img">
+                </div>
+                <span class="product-badge">Réplica Licenciada</span>
+                <h4 class="product-title">O Tamborim do Tempo</h4>
+                <p class="product-desc">
+                    Construído em madeira leve e couro natural, feito para as crianças ritmarem
+                    e cantarem suas próprias memórias.
+                </p>
+                <a href="#" class="product-btn" data-produto="produto6">Ver Ficha de Licenciamento ➔</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         CONTACTO COMERCIAL B2B
+         ===================================================================== -->
+    <section id="contato" class="contact-section">
+        <div class="contact-inner">
+            <span class="contact-label">Licenciamento &amp; Parcerias B2B</span>
+            <h2 class="contact-title">Conecte sua Marca ao<br><span>Universo Runaman</span></h2>
+            <p class="contact-text">
+                Nossas propriedades intelectuais são modeladas para oferecer diferenciação sensorial
+                imediata e forte tração mercadológica. Se a sua empresa atua nos setores de
+                entretenimento, streaming, edição literária de alto padrão ou manufatura de produtos
+                premium e sustentáveis, temos um ecossistema pronto para expandir o alcance do seu portfólio.
+            </p>
+            <p class="contact-text">
+                Abra frentes de licenciamento exclusivas, solicite acesso aos Guias de Estilo
+                (Style Guides) completos ou agende uma reunião de apresentação técnica diretamente
+                com o autor.
+            </p>
+            <a href="mailto:contato@runaman.com?subject=Solicita%C3%A7%C3%A3o%20de%20Parceria%20Comercial%20%E2%80%94%20Runaman&body=Ol%C3%A1%2C%0A%0ATenho%20interesse%20em%20explorar%20uma%20parceria%20comercial%20com%20a%20Runaman.%0A%0ASegue%20abaixo%20uma%20breve%20apresenta%C3%A7%C3%A3o%20da%20minha%20empresa%3A%0A%0ANome%20da%20empresa%3A%20%0ASetor%3A%20%0ASite%3A%20%0A%0AGuardar%C3%ADamos%20de%20agendar%20uma%20reuni%C3%A3o%20de%20apresenta%C3%A7%C3%A3o%20t%C3%A9cnica.%0A%0AAtenciosamente%2C" class="contact-btn">Solicitar Parceria Comercial ➔</a>
+        </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="divider"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span class="footer-text">© 2026 Runaman. Todos os direitos reservados. Portal B2B / Transmídia.</span>
+        <span class="footer-text">Hospedado via Netlify</span>
+    </footer>
+
+    <!-- =====================================================================
+         MODAL — FICHA TÉCNICA (partilhado por todos os produtos)
+         ===================================================================== -->
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true">
+        <div class="modal" id="modalBox">
+
+            <button class="modal-close" id="modalClose" aria-label="Fechar">Fechar ✕</button>
+
+            <span class="modal-badge" id="modalBadge"></span>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <span class="modal-subtitle" id="modalSubtitle"></span>
+
+            <div class="modal-divider"></div>
+
+            <div class="modal-field">
+                <span class="modal-field-label">Status da Propriedade Intelectual</span>
+                <p class="modal-field-value" id="modalConceito"></p>
+            </div>
+
+            <div class="modal-field">
+                <span class="modal-field-label">Engenharia de Materiais</span>
+                <p class="modal-field-value" id="modalMaterial"></p>
+            </div>
+
+            <div class="modal-field">
+                <span class="modal-field-label">Direitos Disponíveis</span>
+                <p class="modal-field-value" id="modalPublico"></p>
+            </div>
+
+            <div class="modal-field">
+                <span class="modal-field-label">Territórios</span>
+                <p class="modal-field-value" id="modalPotencial"></p>
+            </div>
+
+            <div class="modal-divider"></div>
+
+            <a href="mailto:contato@runaman.com?subject=Proposta%20de%20Licenciamento%20%E2%80%94%20Runaman&body=Ol%C3%A1%2C%0A%0ATenho%20interesse%20em%20solicitar%20uma%20proposta%20de%20licenciamento%20para%20o%20produto%20acima.%0A%0ANome%20da%20empresa%3A%20%0ASetor%3A%20%0AProduto%20de%20interesse%3A%20%0A%0AAtenciosamente%2C" class="modal-cta">Solicitar Proposta de Licenciamento ➔</a>
+
+        </div>
+    </div>
+
+    <script>
+        // Fichas Técnicas de PI — Dados Reais
+        const fichas = {
+            produto1: {
+                badge: "Protótipo Oficial",
+                title: "Pelúcia Bicho da Semente",
+                subtitle: "Universo — O Bicho da Semente e os Clorofilhos",
+                statusPI: "Marca Registrada ® Runaman / O Bicho da Semente. Direitos Autorais de Design de Personagem homologados internacionalmente.",
+                material: "Textura ultra macia de lã de açúcar, costuras embutidas invisíveis e enchimento biodegradável.",
+                direitos: "Licenciamento global para manufatura e varejo — categorias Brinquedos e Decoração.",
+                territorios: "Exclusividade regional disponível para América Latina, América do Norte e Europa."
+            },
+            produto2: {
+                badge: "Protótipo Oficial",
+                title: "Pelúcia Orgânica Papanata",
+                subtitle: "Universo — Los Papanatas",
+                statusPI: "Marca Registrada ® Los Papanatas. Governança completa do ecossistema gráfico.",
+                material: "Algodão orgânico 100% certificado e pigmentos extraídos da terra, sem plásticos sintéticos.",
+                direitos: "Licenciamento prioritário para marcas com selo de sustentabilidade e redes de alimentação orgânica.",
+                territorios: "Mercado hispânico e europeu. Co-exclusividade sob consulta para licenciamento de animação."
+            },
+            produto3: {
+                badge: "Concept Model",
+                title: "Pelúcias Huacos Inca",
+                subtitle: "Universo — Macho-Picchu: A Montanha Nômade",
+                statusPI: "Direitos de Design Industrial registrados na coleção Runaman Ancestral. Releitura semiótica protegida.",
+                material: "Tapeçaria fina escovada com bordado geométrico computadorizado de alta densidade.",
+                direitos: "Design de Interiores, Grifes de Museus, Papelaria Fina e Colecionáveis de Luxo.",
+                territorios: "Global, com foco em turismo cultural de alta renda, Ásia e Europa Ocidental."
+            },
+            produto4: {
+                badge: "Concept Model",
+                title: "Brinquedo Rígido Insípido",
+                subtitle: "Universo — Los Papanatas",
+                statusPI: "Patente de Modelo de Utilidade e Registro de Linha Estética Insípido / Runaman em andamento.",
+                material: "Polímero rígido fosco de toque acetinado, cantos suavizados via fresagem computadorizada.",
+                direitos: "Indústrias de injeção plástica de precisão, brinquedos educativos e Art Toys.",
+                territorios: "Internacional, sem restrições continentais."
+            },
+            produto5: {
+                badge: "Protótipo Oficial",
+                title: "Kit Pelúcias Clorofilhos",
+                subtitle: "Universo — O Bicho da Semente e os Clorofilhos",
+                statusPI: "Sub-propriedade vinculada ao universo ® O Bicho da Semente. Proteção de Trade Dress do trio quântico.",
+                material: "Microfibra tecnológica e fios luminescentes ocultos que reagem sutilmente à luz ultravioleta.",
+                direitos: "Distribuição conjunta para entretenimento e cross-merchandising com streaming ou editoras.",
+                territorios: "Global por volume de distribuição em mercados de massa."
+            },
+            produto6: {
+                badge: "Réplica Licenciada",
+                title: "O Tamborim do Tempo",
+                subtitle: "Universo — O Bicho da Semente e os Clorofilhos",
+                statusPI: "Direitos Autorais sobre o Design de Objeto Transmídia Literário ® Jacuba / Runaman.",
+                material: "Madeira leve de reflorestamento torneada e membrana acústica em couro natural tratado.",
+                direitos: "Fábricas de instrumentos infantis, escolas de música e linhas pedagógicas sensoriais.",
+                territorios: "Livre. Preferência por parceiros com forte canal logístico de distribuição escolar."
+            }
+        };
+
+        const overlay  = document.getElementById('modalOverlay');
+        const closeBtn = document.getElementById('modalClose');
+
+        function openModal(id) {
+            const d = fichas[id];
+            if (!d) return;
+            document.getElementById('modalBadge').textContent    = d.badge;
+            document.getElementById('modalTitle').textContent    = d.title;
+            document.getElementById('modalSubtitle').textContent = d.subtitle;
+            document.getElementById('modalConceito').textContent = d.statusPI;
+            document.getElementById('modalMaterial').textContent = d.material;
+            document.getElementById('modalPublico').textContent  = d.direitos;
+            document.getElementById('modalPotencial').textContent = d.territorios;
+            overlay.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            overlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        document.querySelectorAll('.product-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal(btn.dataset.produto);
+            });
+        });
+    </script>
+
+</body>
+</html>
