@@ -1,9 +1,10 @@
 backend:
-  name: github
-  repo: anatinemeriman/anatinemeriman.github.io
-  branch: main
-  base_url: https://runaman-oauth.anatinemeriman.workers.dev
-
+    name: github
+    repo: anatinemeriman/anatinemeriman.github.io
+    branch: main
+    base_url: https://runaman-oauth.anatinemeriman.workers.dev
+    auth_endpoint: /auth
+  
 media_folder: "."
 public_folder: "."
 
