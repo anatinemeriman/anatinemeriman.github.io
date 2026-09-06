@@ -51,7 +51,9 @@ const SITE_DATA = {
                 alt: "Macho-Picchu a Montanha Nômade",
                 meta: "Livro Ilustrado",
                 nome: "Macho-Picchu a Montanha Nômade",
-                descricao: "Uma jornada Metamórfica de um coloso lítico. Atualmente em fase de storyboard para desenvolvimento de longa-metragem.",
+                descricao: "“Macho Picchu: O Nômade” é uma franquia de fantasia épica e misticismo andino que narra o despertar de uma estrutura geológica em uma entidade consciente. 
+                Inspirada no realismo fantástico e no existencialismo, o IP explora a metamorfose de uma montanha sagrada — Macho — que deixa sua passividade milenar para enfrentar 
+                os deuses rancorosos e a ganância colonial.",
             },
             {
                 badge: "Ecológico",
