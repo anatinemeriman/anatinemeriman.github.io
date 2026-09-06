@@ -53,6 +53,14 @@ const SITE_DATA = {
                 nome: "Macho-Picchu a Montanha Nômade",
                 descricao: "Uma jornada Metamórfica de um coloso lítico. Atualmente em fase de storyboard para desenvolvimento de longa-metragem.",
             },
+            {
+                badge: "Novo",
+                imagem: "livro-projeto4.png",
+                alt: "O Homo-Atomicus",
+                meta: "Graphic Novel",
+                nome: "O Homo-Atomicus: \"A Liga da Injustiça\"",
+                descricao: "O que acontece quando heróis movidos por egos inflados, discursos políticos e o peso das convenções sociais tentam conter uma força da natureza que mal entende o conceito de roupas? A HQ usa o choque cultural e a violência cômica para expor o ridículo das nossas próprias regras sociais. Enquanto a Liga tenta aplicar suas táticas burocráticas e julgamentos morais, o Homo-Atomicus responde com a lógica direta de um porrete. Quem é o verdadeiro monstro: a ignorância bruta do homem das cavernas ou a hipocrisia sofisticada da nossa sociedade?",
+            },
             // --- Para adicionar um novo projeto, copie o bloco abaixo: ---
             // {
             //     badge: "Novo",
