@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando...</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img id="logo" src="" alt="Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#licenciamento">Licenciamento</a></li>
+        </ul>
+        <a href="#loja" class="nav-shop">Loja 🛒</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="sobre">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-tag" id="hero-tag"></span>
+                <h1 class="hero-title">
+                    <span id="hero-titulo"></span>
+                    <span id="hero-titulo-destaque"></span>
+                </h1>
+                <p class="hero-description" id="hero-descricao"></p>
+                <a id="hero-botao" href="#" class="cta-button"></a>
+            </div>
+            <div class="hero-visual">
+                <div class="planet-bg">
+                    <img id="hero-personagem" src="" alt="" class="character-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="projects-section" id="projetos">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span id="projetos-titulo"></span> <span id="projetos-titulo-destaque"></span>
+            </h2>
+            <p class="section-subtitle" id="projetos-subtitulo"></p>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <!-- LOJA -->
+    <section class="shop-section" id="loja">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span id="loja-titulo"></span> <span id="loja-titulo-destaque"></span>
+            </h2>
+            <p class="section-subtitle" id="loja-subtitulo"></p>
+        </div>
+        <div class="shop-grid" id="shop-grid"></div>
+    </section>
+
+    <!-- Carrega o conteúdo do data.js -->
+    <script src="data.js"></script>
+    <script>
+        // ================================================================
+        // NÃO EDITE ESTE BLOCO — ele lê o data.js e monta o site
+        // ================================================================
+
+        const d = SITE_DATA;
+
+        // Título da aba
+        document.title = d.config.titulo_aba;
+
+        // Logo
+        document.getElementById('logo').src = d.config.logo;
+
+        // Hero
+        document.getElementById('hero-tag').textContent = d.hero.tag;
+        document.getElementById('hero-titulo').textContent = d.hero.titulo;
+        document.getElementById('hero-titulo-destaque').textContent = d.hero.titulo_destaque;
+        document.getElementById('hero-descricao').textContent = d.hero.descricao;
+        document.getElementById('hero-botao').textContent = d.hero.botao_texto;
+        document.getElementById('hero-botao').href = d.hero.botao_link;
+        document.getElementById('hero-personagem').src = d.hero.personagem_img;
+        document.getElementById('hero-personagem').alt = d.hero.personagem_alt;
+
+        // Projetos — cabeçalho
+        document.getElementById('projetos-titulo').textContent = d.projetos.titulo;
+        document.getElementById('projetos-titulo-destaque').textContent = d.projetos.titulo_destaque;
+        document.getElementById('projetos-subtitulo').textContent = d.projetos.subtitulo;
+
+        // Projetos — cards gerados automaticamente
+        const projectsGrid = document.getElementById('projects-grid');
+        d.projetos.lista.forEach(projeto => {
+            projectsGrid.innerHTML += `
+                <div class="project-card">
+                    <div class="project-media">
+                        <span class="tv-badge">${projeto.badge}</span>
+                        <img src="${projeto.imagem}" alt="${projeto.alt}">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-meta">${projeto.meta}</span>
+                        <h3 class="project-name">${projeto.nome}</h3>
+                        <p class="project-desc">${projeto.descricao}</p>
+                    </div>
+                </div>`;
+        });
+
+        // Loja — cabeçalho
+        document.getElementById('loja-titulo').textContent = d.loja.titulo;
+        document.getElementById('loja-titulo-destaque').textContent = d.loja.titulo_destaque;
+        document.getElementById('loja-subtitulo').textContent = d.loja.subtitulo;
+
+        // Loja — cards gerados automaticamente
+        const shopGrid = document.getElementById('shop-grid');
+        d.loja.lista.forEach(produto => {
+            shopGrid.innerHTML += `
+                <div class="product-card">
+                    <div class="product-media">
+                        <img src="${produto.imagem}" alt="${produto.alt}" class="product-img">
+                    </div>
+                    <h4 class="product-title">${produto.nome}</h4>
+                    <span class="product-price">${produto.preco}</span>
+                </div>`;
+        });
+    </script>
+
+</body>
+</html>
