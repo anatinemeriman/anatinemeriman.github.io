@@ -54,6 +54,14 @@ const SITE_DATA = {
                 descricao: "Uma jornada Metamórfica de um coloso lítico. Atualmente em fase de storyboard para desenvolvimento de longa-metragem.",
             },
             {
+                badge: "Ecológico",
+                imagem: "raf-bicho-semente.png",
+                alt: "O Bicho da Semente",
+                meta: "Série Animada & Livro",
+                nome: "O Bicho da Semente e os Clorofilhos",
+                descricao: "Uma narrativa contemporânea com foco ecológico para o público infantil. A jornada explora a identidade cultural e a preservação ambiental através de seres fantásticos e lúdicos que defendem a natureza.",
+            },
+            {
                 badge: "Novo",
                 imagem: "livro-projeto4.png",
                 alt: "O Homo-Atomicus",
@@ -101,13 +109,6 @@ const SITE_DATA = {
                 nome: "Pelúcias Huacos Incas",
                 preco: "R$ 35,90",
             },
-            // --- Para adicionar um novo produto, copie o bloco abaixo: ---
-            // {
-            //     imagem: "produto4.png",
-            //     alt: "Nome do Produto",
-            //     nome: "Nome do Produto",
-            //     preco: "R$ 00,00",
-            // },
         ],
     },
 
