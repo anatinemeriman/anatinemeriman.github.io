@@ -51,9 +51,7 @@ const SITE_DATA = {
                 alt: "Macho-Picchu a Montanha Nômade",
                 meta: "Livro Ilustrado",
                 nome: "Macho-Picchu a Montanha Nômade",
-                descricao: "“Macho Picchu: O Nômade” é uma franquia de fantasia épica e misticismo andino que narra o despertar de uma estrutura geológica em uma entidade consciente. 
-                Inspirada no realismo fantástico e no existencialismo, o IP explora a metamorfose de uma montanha sagrada — Macho — que deixa sua passividade milenar para enfrentar 
-                os deuses rancorosos e a ganância colonial.",
+                descricao: `Macho Picchu: O Nômade é uma franquia de fantasia épica e misticismo andino que narra o despertar de uma estrutura geológica em uma entidade consciente. Inspirada no realismo fantástico e no existencialismo, o IP explora a metamorfose de uma montanha sagrada — Macho — que deixa sua passividade milenar para enfrentar os deuses rancorosos e a ganância colonial.`,
             },
             {
                 badge: "Ecológico",
@@ -61,7 +59,7 @@ const SITE_DATA = {
                 alt: "O Bicho da Semente",
                 meta: "Série Animada & Livro",
                 nome: "O Bicho da Semente e os Clorofilhos",
-                descricao: "Uma narrativa contemporânea com foco ecológico para o público infantil. A jornada explora a identidade cultural e a preservação ambiental através de seres fantásticos e lúdicos que defendem a natureza.",
+                descricao: "Uma narrativa contemporânea com foco ecológico para o público infantil. A jornada explora a identidade cultural e a preservação ambiental através de seres fantásticos lúdicos que defendem a natureza.",
             },
             {
                 badge: "Novo",
@@ -111,6 +109,13 @@ const SITE_DATA = {
                 nome: "Pelúcias Huacos Incas",
                 preco: "R$ 35,90",
             },
+            // --- Para adicionar um novo produto, copie o bloco abaixo: ---
+            // {
+            //     imagem: "produto4.png",
+            //     alt: "Nome do Produto",
+            //     nome: "Nome do Produto",
+            //     preco: "R$ 00,00",
+            // },
         ],
     },
 
